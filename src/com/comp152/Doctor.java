@@ -8,6 +8,19 @@ public class Doctor {
         AlmaMater = MedSchool;
 
     }
+    @Override
+    public String toString(){
+        return "doctor from "+AlmaMater+" who charges "+fee;
+    }
+    @Override
+    public boolean equals(Object other){
+        if (!(other instanceof Doctor))
+            return false;
+        Doctor otherDoctor = (Doctor) other;
+        var isSame = this.fee == otherDoctor.fee && this.AlmaMater == otherDoctor.AlmaMater;
+        return isSame;
+
+    }
 
     public void treatPatient(Person patient){
         System.out.println("Take two of these and call the office in the morning");

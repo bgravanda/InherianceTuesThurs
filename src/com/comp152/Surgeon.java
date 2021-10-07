@@ -8,10 +8,12 @@ public class Surgeon extends Doctor{
         super(999.99, "Fancy Name Brand School");
         this.hospital = hospital;
     }
+    @Override
     public void treatPatient(Person patient){
         var hoursPicker = new Random();
         System.out.println("After "+hoursPicker.nextInt(8)+" hours of surgery at "+hospital+ "our patient should be on the mend");
-        patient.getTreated();
+        //patient.getTreated();
+        super.treatPatient(patient);
 
     }
 
